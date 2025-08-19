@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="quiz.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quran Memorization Quiz App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    
+    <nav>
+      <button id="icon"><i class="fa-solid fa-bars"></i></button>
+      <ul class="remove1">
+        <div class="logo">📖</div>
+        <li><a href="home.html">الرئيسية</a></li>
+        <li><a href="quiz.html">الاختبار</a></li>
+        <li><a href="contact.asp">تواصل</a></li>
+      </ul>
+    </nav>
+
+    
+    <div class="card">
+      <h3>📖 اقرأ الآية الحالية بعناية  
+<br />👆 ثم اختر الإجابة الصحيحة للآية التالية  
+<br />➡️ كل اختيار صحيح يقربك من الهدف!</h3>
+
+      
+      <p id="quizText"></p>
+      <div id="options"></div>
+
+      <p id="message"></p>
+
+     
+      <select id="surahSelect">
+        <option value="1">الفاتحة</option>
+        <option value="2">البقرة</option>
+        <option value="3">آل عمران</option>
+        <option value="4">النساء</option>
+        <option value="5">المائدة</option>
+        
+    
+      <label for="surahSelect">اختر السورة:</labe
+      </select>
+         
+      <button id="next" type="button">التالي</button> 
+      <button id="submit" type="button">إرسال</button>
+      <button id="result" type="button">النتيجة</button>
+
+
+    </div>
+
+    <script src="quiz.js"></script>
+  </body>
+</html>
