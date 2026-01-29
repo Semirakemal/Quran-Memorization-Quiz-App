@@ -26,7 +26,7 @@ Live Demo
 You can view the project live here:
 Live Demo Link
 (Replace the above link with your actual hosted link if available)
-Contact
+## Contact
 Email: ksemira225@gmail.com
 Telegram: @Ramise41
-LinkedIn: Semira Kemal
+
