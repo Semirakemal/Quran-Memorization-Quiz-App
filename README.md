@@ -21,10 +21,12 @@ Ayora is a web-based application designed to help users **memorize the Qur’an*
 - CSS3  
 - JavaScript  
 - [AlQuran Cloud API](https://alquran.cloud/api) for Qur’an text, translations, and audio  
-
-## How to Run
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/ayora-quran-tracker.git
+## How to run
+Live Demo
+You can view the project live here:
+Live Demo Link
+(Replace the above link with your actual hosted link if available)
+Contact
+Email: ksemira225@gmail.com
+Telegram: @Ramise41
+LinkedIn: Semira Kemal
