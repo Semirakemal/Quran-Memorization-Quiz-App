@@ -1,151 +1,302 @@
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===== Body ===== */
 body {
-    font-size: 30px;
-    display: flex;
-    font-family: serif;
-    background-color: papayawhip;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: darkslategrey;
-    flex-direction: column;
-   
-    
+  font-family: 'Segoe UI', sans-serif;
+  background: #e0ecf4;
+  color: #0B2545;
+  line-height: 1.6;
 }
 
-.hero{
-    background-image: url("home.jpg"); 
-    min-height: 60vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: 0;
-    position: relative;
-    padding: 0;
-    
-    
-    
-    
-}
-.ayah{
-    bottom: 13%;
-    font-size: 70px; 
-    text-align: center;
-    position: absolute;
-    margin: 0;
-    width: 93%;
-    color: white;
+/* ===== NAVBAR ===== */
+nav {
+  background-color: darkslategrey;
+  padding: 15px 30px;
 }
 
-.bo {
-    font-size:90px;
-}
-
-@media only screen and (max-width: 768px) {
-   .ayah{
-     font-size: 30px; 
-     width: auto;
-   }
- .bo{
-     font-size:30px; 
-  }
-}
 .remove1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: sticky;
-    border-radius: 0;
-    background-color: darkslategrey;
-    top: 0;
-    justify-content: flex-end;
-    gap: 10,px;
-    display: flex;
-    z-index: 100;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    
-    
-}
-#icon{
-    display: none;
-}
-.remove1 li a{
-    color: papayawhip;
-    margin: 10px;
-    font-size: 22px;
+  display: flex;
+  gap: 25px;
+  list-style: none;
 }
 
-@media only screen and (max-width: 768px) {
-   .remove1{
-left: 0px;
-top: 0px;
-display: none;
-width: auto;
-position: absolute;
-
-padding: 10px;
-border-radius: 0;
-
-   }
- .hero{
-      height: 400px;
-  }
-
-i {
-    font-size: 30px;
-    margin-left: 0px;
-    color: papayawhip;
-    
-  } 
-  #icon {
-      background-color: darkslategrey;
-      padding: 15px;
-     border-radius: none;
-      display:block;
-    width:100%;
-      margin:0;
-      top: 0px;
-     
-  }
-
-.remove1.is-open{
-    display: block;
+.remove1 li a {
+  text-decoration: none;
+  color: papayawhip;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-}
-button{
- background-color: darkslategrey;  
- padding: 4%;
- border-radius: 35px;
- font-size: 60px;
- font-family: serif;
+.remove1 li a:hover {
+  color: #ffebcd;
 }
 
+/* ===== HERO SECTION ===== */
+#hero {
+  text-align: center;
+  background:
+    linear-gradient(
+      rgba(47, 79, 79, 0.25),
+      rgba(255, 239, 213, 0.25)
+    ),
+    url("quran.jpg");
+  width: 100%;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
 
+#hero h1 {
+  font-size: 150px;
+  margin-bottom: 15px;
+}
 
-@media only screen and (max-width: 768px) {
-button {
-    font-size: 20px;
-    border-radius: 10px;
-    padding: 15px;
+#hero p {
+  font-size: 52px;
 }
+
+/* ===== CARDS CONTAINER ===== */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+  align-items: center;
 }
-.bo{
-    margin-bottom: 8px;
+
+/* ===== CARDS ===== */
+.card1 {
+  background-color: papayawhip;
+  padding: 25px;
+  min-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
-footer{
-    padding:10px;
-    background-color: grey;
-    color: papayawhip;
-    font-size:20px;
-    bottom: 0;
+
+.card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
-.main-content {
+
+#start {
+  padding: 10px 20px;
+  background-color: darkslategrey;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#start:hover {
+  background-color: #0B2545;
+}
+
+/* ===== ABOUT SECTION ===== */
+#about-section {
+  background: linear-gradient(
+    rgba(47, 79, 79, 0.95),
+    rgba(47, 79, 79, 0.95)
+  );
+  color: papayawhip;
+  padding: 60px 30px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+
+#about-section h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+#about-section p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ===== MISSION & VISION SECTION ===== */
+#about-sub {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.about-box {
   flex: 1;
+  min-width: 250px;
+  background: papayawhip;
+  color: darkslategrey;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.about-box:hover {
+  transform: translateY(-5px);
+}
+
+.about-box h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.about-box p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ===== CONTACT SECTION ===== */
+#contact {
+  width: 100%;
+  padding: 10px;
+  background-color: darkslategrey;
+  color: papayawhip;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+#contact p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-btn i {
+  font-size: 1.2rem;
+}
+
+/* Platform Colors */
+.contact-btn.email { color: #D44638; }
+.contact-btn.telegram { color: #0088cc; }
+.contact-btn.linkedin { color: #0A66C2; }
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 769px) {
+  .cards-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card1 {
+    width: 300px;
+  }
+
+  #hero {
+    height: 1500px;
+    padding: 40px;
+  }
+
+  #hero h1 {
+    font-size: 80px;
+  }
+
+  #hero p {
+    font-size: 28px;
+  }
+
+  /* About left/right layout */
+  #about-section {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  #about-sub {
+    width: 45%;
+    display: inline-block;
+    flex-direction: column;
+    gap: 80px;
+    vertical-align: top;
+    
+  }
+  
+  .about-box {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 400px;
+    padding: 20px;
+  }
+
+  #hero h1 {
+    font-size: 36px;
+  }
+
+  #hero p {
+    font-size: 18px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  #about-section {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  #about-sub {
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .about-box {
+    width: 100%;
+  }
+
+  .card1 {
+    width: 90%;
+  }
+  #contact {
+  padding: 20px;
+}
 }

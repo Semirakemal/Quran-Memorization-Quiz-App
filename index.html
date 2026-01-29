@@ -1,63 +1,113 @@
-<!doctype html>
-<html>
-  <head>
-      <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quran Memorization Quiz App</title>
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </head>
-  <body>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ayora Qur'an Memorization Tracker</title>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="home.css" />
+  
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
   <nav>
-    
-       <button id="icon"> 
-   <i class="fa-solid fa-bars"></i>
-   </button>
-    <ul class="remove1">
+      <ul class="remove1">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#contact">contact</a></li>
+      <li><a href="#about-section">About</a></li>
+       <li><a href="#about">Task</a></li>
+     
       
-  <p class="logo"><div class="logo">📖</div>
-  </p>
-  
-  <li><a href="home.html">الرئيسية</a></li>
-  <li><a href="quiz.html">الاختبار</a></li>
-  <li><a href="https://t.me/@Ramise41">تواصل</a></li>
-  
-</ul>
+    
+    </ul>
   </nav>
-  <div class="main-content"
-  <div class="hero">
-    <h1>تطبيق مسابقة حفظ القرآن</h1>
-    <p class="ayah"> إِنَّ الَّذِينَ يَتْلُونَ كِتَابَ اللَّهِ وَأَقَامُوا الصَّلَاةَ وَأَنْفَقُوا مِمَّا رَزَقْنَاهُمْ سِرًّا وَعَلَانِيَةً يَرْجُونَ تِجَارَةً لَنْ تَبُورَ </p>
-  </div>
-  <div class="bo">
-    <h3>السلام عليكم ورحمة الله وبركاته
-</h3>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <h1>Wellcome to Ayora</h1>
+    <p>
+      “Every ayah counts toward your goal.”
+    </p>
+  </section>
+<div class="cards-container">
+  <!-- ===== ABOUT US ===== -->
+<section id="about-section"  class="about-content">
+  <h2>About Ayora</h2>
   <p>
-مرحباً بكم في موقعنا! نحن هنا لمساعدتك على حفظ ومراجعة القرآن الكريم بطريقة سهلة، ممتعة، وتفاعلية. سواء كنت مبتدئاً أو لديك خبرة في الحفظ، ستجد أدوات وتحديات يومية تساعدك على التقدم بثقة.
+    About Ayora
+  Ayora is a modern Qur’an learning platform designed to make memorization meaningful, consistent, and motivating. It combines smart tools like quizzes, audio recitation, daily challenges, and progress tracking to help learners stay connected with the Qur’an—anytime, anywhere.
+  </p>
+</section>
 
-نهدف إلى جعل رحلة حفظ القرآن ملهمة ومشوقة من خلال أسئلة تفاعلية، اختبارات قصيرة، ومتابعة تقدمك خطوة بخطوة. كل آية تتعلمها تقرّبك أكثر من هدفك في حفظ القرآن.
+  <!-- ===== ABOUT US ===== -->
+<section id="about-sub"  >
+<div class="about-box">
+  <h2>Our Mission</h2>
+  <p>
+    
+ Our mission is to support and simplify Qur’an memorization using technology that is accessible, engaging, and spiritually uplifting. Ayora aims to help users build a strong, lasting relationship with the Qur’an through consistency and understanding.
+  </p>
+</div>
 
-انضم إلينا، وابدأ رحلتك مع القرآن اليوم! 🌟
-تعلم، احفظ، وتحدى نفسك بطريقة ممتعة تدعمك على الدوام. 📖✨
-</p>
+<div class="about-box" >
+  <h2>Our Vision</h2>
+  <p>
+Our vision is to become a trusted digital companion for Qur’an learners worldwide, inspiring a new generation to memorize, reflect, and live by the Qur’an with confidence and ease.
+  </p>
+ </div>
+</section>
+</div>
 
-  <p>ابدأ رحلتك في المراجعة اليومية لحفظ القرآن، واختبر مدى تقدمك من خلال أسئلة ممتعة وتحديات محفزة!</p>
-   <a href="quiz.html"> <button id="value">
-   ابدأ</button> </a>
-    <p id="message"></p>
-    </div>
-    </div>
-    <footer>
-       <p>© 2025 تطبيق اختبار حفظ القرآن الكريم</p>
-  <p>تواصل معنا:</p>
- 
+<div class="cards-container">
+  <section id="about" class="card1">
+    <h1>      🧠 </h1>
+    <h2>Quiz</h2>
+    <p>
+
+“Test your understanding by choosing the correct continuation of ayahs.”
+    </p>
+         <a href="quiz.html"><button id="start"> start</button></a>
+  </section>
+  <section id="about" class="card1">
+    <h1>      📖 </h1>
+    <h2>Qur’an Memorization </h2>
+    <p>
+
+“Memorize ayahs step by step with audio, translation, and progress tracking.”
+
+    </p>
+    <a href="doc.html"><button id="start"> start</button></a>
+  </section>
+  <section id="about" class="card1">
+    <h1>      🌟 </h1>
+    <h2>Daily Challenges</h2>
+    <p>
+
+“Stay consistent with daily Qur’an challenges designed to build habit.”
+    </p>
+     <a href="challenge.html"><button id="start"> start</button></a>
+  </section>
+  </div>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Reach out via Telegram, Email, or LinkedIn for inquiries or collaborations.</p>
   
-<a href="https://t.me/@Ramise41"><i class="fa-brands fa-telegram"></i></a>
-
-<a href="ksemira225@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-</footer>
-
+  <div class="contact-links">
+    <a href="mailto:ksemira225@gmail.com" target="_blank" class="contact-btn email">
+      <i class="fa-solid fa-envelope"></i> Email
+    </a>
+    <a href="https://t.me/@Ramise" target="_blank" class="contact-btn telegram">
+      <i class="fa-brands fa-telegram"></i> Telegram
+    </a>
+    <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" class="contact-btn linkedin">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+  </div>
+</section>
   <script src="quiz.js"></script>
-  </body>
+
+</body>
 </html>

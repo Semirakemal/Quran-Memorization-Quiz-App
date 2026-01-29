@@ -1,139 +1,76 @@
-body {
-    font-size: 30px;
-    font-family: serif;
-    background-color: papayawhip;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    color: darkslategrey;
-    
-}
-.remove1 {
-    list-style-type: none;
-    margin: 0px;
-    margin-bottom: 0;
-    padding: 5%;
-    position: relative;
-    border-radius: 0px;
-    background-color: darkslategrey;
-    right: auto;
-    top: 0;
-    justify-content: flex-end;
-    display: flex;
-    z-index: 1;
-    width: auto;
-    
-    
-}
-#icon{
-    display: none;
-    margin: 0%;
-    border-radius: 0;
-}
-.remove1 li a{
-    color: papayawhip;
-    margin: 10px;
-    font-size: 22px;
+/* ===== QUIZ SECTION RESPONSIVE ===== */
+.quiz-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.logo{
-    padding: 20px;
-    border-radius: 60px;
-    background-color: papayawhip;
-    width: 4%;
-    margin: 0;
-    right:0%;
-    position: relative;
-    display: flex;
+.ayah-box {
+  background: papayawhip;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 26px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.8;
+  text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
-   .remove1{
-left: 0px;
-top: 0px;
-display: none;
-width: 20%;
-position: absolute;
-padding: 10px;
-border-radius: 0;
+.options label {
+  display: block;
+  background: #f3f3f3;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.logo{
-    padding:5px;
-    border-radius: 70px;
-    background-color: papayawhip;
-    width: 40%;
-    margin: 20%;
+.options label:hover {
+  background: #e5dcc8;
 }
 
-i {
-    font-size: 30px;
-    margin-left: 0px;
-    color: papayawhip;
-    
-  } 
-  #icon {
-      background-color: darkslategrey;
-      padding: 15px;
-     border-radius: none;
-      display:block;
-    width:100%;
-      margin:0;
-      top: 0px;
-     position: relative;
+.quiz-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: darkslategrey;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0B2545;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .quiz-title {
+    font-size: 24px;
   }
-  
 
-.remove1.is-open{
-    display: block;
+  .ayah-box {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .options label {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .quiz-buttons button {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
 }
-
-}
-
-button{
-    margin:0px;
-    padding: 4%;
-    border-radius:20%;
-    background-color: darkslategrey ;
-    font-size: 33px;
-    font-family: serif;
-    margin: 3%;
-    
-    
-    
-}
-
-#a {
-    margin-top: 0;
-}
-
-
-
-h3 {
-    color: grey;
-    font-size:54px;
-}
-
-
-@media only screen and (max-width: 620px) {
-
-h3{
-    font-size:30px;
-}
-}
-
-.remove {
-    list-style-type: none;
-    margin: 1%;
-    padding: 0;
-    position: absolute;
-    bottom: 47%;
-}
-input[type="radio"] {
-  transform: scale(1.5);
-  margin: 6px;
-}
- #surahSelect{
-     font-size:20px;
- }
-

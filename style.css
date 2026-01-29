@@ -1,0 +1,149 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: papayawhip;
+  color: darkslategrey;
+}
+
+/* NAV */
+nav {
+  background: darkslategrey;
+  padding: 15px;
+}
+
+#icon {
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+#icon a {
+  color: papayawhip;
+}
+
+/* PAGE WRAPPER */
+.page {
+  padding: 20px;
+  margin: 20px;
+}
+
+/* CARD */
+.card {
+  background: papayawhip;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* SELECTORS */
+.selectors {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+select {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* AYAH */
+.ayah-display {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  font-size: 26px;
+  line-height: 2.2rem;
+  direction: rtl;
+  font-family: "Amiri", serif;
+
+  /* 🔥 IMPORTANT FIX */
+  height: auto;
+  min-height: 120px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* TRANSLATION */
+.translation-display {
+  background: #fff;
+  padding: 18px;
+  margin: 15px 0;
+  border-radius: 12px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.controls button,
+.controls select {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+.controls button {
+  background: darkslategrey;
+  color: white;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #0b2545;
+}
+button{
+  background-color:darkslategrey;
+  border-radius: 10px;
+  border: none;
+  padding: 20px;
+  font-size: 20px;
+  
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .page {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .ayah-display {
+    font-size: 22px;
+  }
+
+  .translation-display {
+    font-size: 16px;
+  }
+  
+  button{
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+

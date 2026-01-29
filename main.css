@@ -1,0 +1,155 @@
+*{
+margin: 0;
+padding: 0;
+}
+body {
+    font-family: serif;
+    background-color: papayawhip;
+    color: darkslategrey;
+   
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    background-color: darkslategrey;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    
+}
+.remove1 {
+
+list-style: none;
+
+margin: 0;
+
+display: flex;
+
+justify-content: flex-end;
+
+gap: 20px;
+
+}
+
+
+.logo {
+    background-color: papayawhip;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 50%;
+}
+
+/* ===== HAMBURGER ===== */
+#icon {
+    background-color: darkslategrey;
+    border: none;
+    color: papayawhip;
+    font-size: 26px;
+}
+/* ===== CARD ===== */
+.card {
+    background-color: papayawhip;
+    margin: 30px auto;
+    padding: 25px;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
+  overflow: visible;
+}
+}
+
+.card:hover {
+   
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* ===== QUIZ SPECIFIC ===== */
+.quiz-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ayah-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    font-size: 24px;
+}
+
+.options-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.options label {
+    display: block;
+    background: #f3f3f3;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.options label:hover {
+    background: #e5dcc8;
+}
+
+.quiz-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+   
+
+   nav{
+     padding: 10px;
+   }
+
+    .ayah-card, .options-card {
+        margin: 15px 10px;
+        font-size: 20px;
+    }
+.card {
+  max-width: 95%;
+  margin: 20px auto;
+}
+    .options label {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .quiz-buttons button {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+}
+
+#reciter-select,#language-select,#theme-select{
+  margin: 20px;
+  background-color: darkslategrey;
+  border-radius: 15px;
+  border: none;
+  padding: 15px;
+  width: 40%;
+  
+}
+
+a{
+  color: papayawhip;
+}

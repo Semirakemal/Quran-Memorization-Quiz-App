@@ -1,0 +1,41 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>Ayora Qur'an Memorization Tracker</title>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+  <link rel="stylesheet" href="style.css">  
+   <link rel="stylesheet" href="main.css">  
+</head>  
+<body>  
+ <nav>
+     <button id="icon">  <a href="index.html#about">
+  <i class="fa-solid fa-arrow-left"></i> </a>
+  </button>
+
+    <ul class="remove1">
+      
+  </nav>  
+  
+  <section id="quran" class="card">  
+  <h2>📖 Qur'an Memorization</h2>  
+<div class="selectors">  
+  <select id="surah-select"></select>  
+  <select id="ayah-select"></select>  
+</div>  
+<div id="ayah-display" class="ayah-display">Select a Surah and Ayah</div>  
+<div id="translation-display" class="translation-display"></div>  
+<div class="controls">  
+  <button id="play-audio">▶️ Play Audio</button>  
+  <select id="status-select">  
+    <option value="new">🆕 New</option>  
+    <option value="reviewing">🔁 Reviewing</option>  
+    <option value="memorized">✅ Memorized</option>  
+  </select>  
+  <button id="save-status">Save Status</button>  
+</div>
+
+  </section>   
+  <script src="doc.js"></script>    
+  </body>  
+</html>  

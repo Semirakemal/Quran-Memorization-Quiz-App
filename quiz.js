@@ -1,105 +1,113 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Hamburger menu (works on any page with nav)
-  const homebutton = document.getElementById("icon");
-  const nav = document.getElementsByClassName("remove1")[0];
+  // Hamburger menu toggle
+  const icon = document.getElementById("icon");
+  const nav = document.querySelector(".remove1");
 
-  if(homebutton && nav){
-    homebutton.addEventListener("click", () => {
-      nav.classList.toggle("is-open");
+  icon?.addEventListener("click", () => {
+    nav.classList.toggle("is-open");
+  });
+
+  // Quiz elements
+  const quizText = document.getElementById("quizText");
+  const optionsDiv = document.getElementById("options");
+  const message = document.getElementById("message");
+  const submitBtn = document.getElementById("submit");
+  const nextBtn = document.getElementById("next");
+  const surahSelect = document.getElementById("surahSelect");
+  const resultBtn = document.getElementById("result");
+
+  if (!quizText) return;
+
+  let correctAnswer = "";
+  let score = 0;
+  let total = 0;
+  let answered = false;
+  let ayahs = [];
+
+  // Load Surahs into select
+  fetch("https://api.alquran.cloud/v1/surah")
+    .then(res => res.json())
+    .then(data => {
+      surahSelect.innerHTML = `<option disabled selected>Select Surah</option>`;
+      data.data.forEach(surah => {
+        const option = document.createElement("option");
+        option.value = surah.number;
+        option.textContent = `${surah.number}. ${surah.englishName}`;
+        surahSelect.appendChild(option);
+      });
     });
-  }
 
+  // Load Quiz when Surah is selected
+  surahSelect.addEventListener("change", async () => {
+    answered = false;
+    submitBtn.disabled = false;
+    const surah = surahSelect.value;
 
+    const res = await fetch(`https://api.alquran.cloud/v1/surah/${surah}`);
+    const data = await res.json();
+    ayahs = data.data.ayahs;
 
-const quizText = document.getElementById("quizText");
-const optionsDiv = document.getElementById("options");
-const message1 = document.getElementById("message");
-const submitBtn = document.getElementById("submit");
-const nextBtn = document.getElementById("next");
-const surahSelect = document.getElementById("surahSelect");
-const resultBtn = document.getElementById("result");
+    loadQuizQuestion();
+  });
 
-let correctAnswer = "";
-let score = 0;
-let totalQuestions = 0;
+  // Next button
+  nextBtn.addEventListener("click", () => {
+    if (!ayahs.length) return message.textContent = "Please select a Surah first!";
+    answered = false;
+    submitBtn.disabled = false;
+    loadQuizQuestion();
+  });
 
-
-
-
-
-nextBtn.addEventListener("click", async function () {
-  try {
-    const surahNum = parseInt(surahSelect.value);
-    const response = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}`);
-    const data = await response.json();
-    const ayahs = data.data.ayahs;
-
-    const currentIndex = Math.floor(Math.random() * (ayahs.length - 1));
-    const currentAyah = ayahs[currentIndex].text;
-    const nextAyah = ayahs[currentIndex + 1]?.text || ayahs[currentIndex].text;
-    correctAnswer = nextAyah;
-
-    
-    let wrongChoices = [];
-    const keywords = nextAyah.split(" ").slice(0, 3);
-    for (let ay of ayahs) {
-      if (ay.text !== nextAyah && wrongChoices.length < 3) {
-        if (keywords.some(k => ay.text.includes(k))) wrongChoices.push(ay.text);
-      }
+  // Submit button
+  submitBtn.addEventListener("click", () => {
+    if (answered) return;
+    const selected = document.querySelector("input[name='q']:checked");
+    if (!selected) {
+      message.textContent = "⚠️ Please select an answer";
+      message.style.color = "red";
+      return;
     }
 
-    while (wrongChoices.length < 3) {
-      let randSurahNum = Math.floor(Math.random() * 114) + 1;
-      if (randSurahNum === surahNum) continue;
-      const randResp = await fetch(`https://api.alquran.cloud/v1/surah/${randSurahNum}`);
-      const randData = await randResp.json();
-      const randAyahs = randData.data.ayahs;
-      let randAyahText = randAyahs[Math.floor(Math.random() * randAyahs.length)].text;
-      if (!wrongChoices.includes(randAyahText) && randAyahText !== nextAyah) wrongChoices.push(randAyahText);
+    answered = true;
+    submitBtn.disabled = true;
+
+    if (selected.value === correctAnswer) {
+      score++;
+      message.textContent = "✅ Correct!";
+      message.style.color = "green";
+    } else {
+      message.textContent = "❌ Wrong!";
+      message.style.color = "red";
     }
+  });
 
-    
-    let options = [correctAnswer, ...wrongChoices].sort(() => Math.random() - 0.5);
+  // Result button
+  resultBtn.addEventListener("click", () => {
+    message.textContent = `Score: ${score} / ${total}`;
+    message.style.color = "blue";
+  });
 
-    
-    quizText.textContent = ` ${currentAyah}`
-    optionsDiv.innerHTML = options
-      .map(opt => `<label><input type="radio" name="q1" value="${opt}"> ${opt}</label><br>`)
-      .join("");
+  // Function to load a random quiz question
+  function loadQuizQuestion() {
+    const i = Math.floor(Math.random() * (ayahs.length - 1));
+    const currentAyah = ayahs[i].text;
+    correctAnswer = ayahs[i + 1].text;
 
-    message1.textContent = "";
-    totalQuestions++;
+    // Generate 3 wrong options
+    let options = [correctAnswer];
+    while (options.length < 4) {
+      const r = ayahs[Math.floor(Math.random() * ayahs.length)].text;
+      if (!options.includes(r)) options.push(r);
+    }
+    options.sort(() => Math.random() - 0.5);
 
-  } catch (error) {
-    console.error(error);
-    message1.textContent = "⚠️ حدث خطأ في جلب السؤال";
+    quizText.textContent = currentAyah;
+    optionsDiv.innerHTML = options.map(o =>
+      `<label><input type="radio" name="q" value="${o}"> ${o}</label>`
+    ).join("");
+
+    message.textContent = "";
+    total++;
   }
-});
-
-submitBtn.addEventListener("click", function () {
-  let selected = document.querySelector('input[name="q1"]:checked');
-  if (!selected) {
-    message1.textContent = "⚠️ الرجاء اختيار إجابة";
-    message1.style.color = "red";
-    return;
-  }
-
-  if (selected.value === correctAnswer) {
-    message1.textContent = "✅ إجابة صحيحة!";
-    message1.style.color = "green";
-    score++;
-  } else {
-    message1.textContent = "❌ إجابة خاطئة";
-    message1.style.color = "red";
-  }
-});
-
-
-resultBtn.addEventListener("click", function () {
-  message1.textContent = `نتيجتك: ${score} من ${totalQuestions}`;
-  message1.style.color = "blue";
-});
 });
