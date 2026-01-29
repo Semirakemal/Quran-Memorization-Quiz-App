@@ -25,7 +25,7 @@ Ayora is a web-based application designed to help users **memorize the Qur’an*
 Live Demo
 You can view the project live here:
 Live Demo Link
-(Replace the above link with your actual hosted link if available)
+(https://semirakemal.github.io/Ayora-Quran-Memorization--Tracker/)
 ## Contact
 Email: ksemira225@gmail.com
 Telegram: @Ramise41
